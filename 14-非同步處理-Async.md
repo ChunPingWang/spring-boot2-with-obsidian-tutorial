@@ -1,5 +1,13 @@
 # 非同步處理（Async）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`AsyncConfig`、`NotificationService`
+- 驗證測試：`NotificationServiceTest`
+- 校正重點：非同步章節已使用命名執行緒池與 `@Async` 回傳 `CompletableFuture` 的做法，並驗證確實在非同步 executor 執行。
+
+
 ## 什麼是非同步處理？
 
 在同步（Synchronous）模式下，方法呼叫會**阻塞**當前執行緒，等待結果返回才繼續。

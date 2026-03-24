@@ -1,5 +1,13 @@
 # 日誌管理（Logging）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`CheckoutService`
+- 驗證測試：`CheckoutServiceTest`
+- 校正重點：日誌章節使用 SLF4J + Logback 的實際服務範例，並透過測試捕捉輸出確認 log 內容。
+
+
 ## 概述
 
 Spring Boot 預設使用 **Logback** 作為日誌框架，並透過 **SLF4J（Simple Logging Facade for Java）** 作為抽象層。這讓你可以在不修改程式碼的情況下切換底層日誌實作。

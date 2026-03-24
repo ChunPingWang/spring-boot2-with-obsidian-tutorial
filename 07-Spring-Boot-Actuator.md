@@ -1,5 +1,13 @@
 # Spring Boot Actuator
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`application.properties`（management 設定）
+- 驗證測試：`ActuatorHealthTest`
+- 校正重點：Actuator 章節已對齊 `/actuator/health` 的實際暴露設定；生產環境不建議無限制開放所有端點。
+
+
 ## 什麼是 Actuator？
 
 Spring Boot Actuator 提供一系列**生產環境就緒的監控端點（Endpoint）**，讓你可以：

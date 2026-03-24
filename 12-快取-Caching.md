@@ -1,5 +1,13 @@
 # 快取（Caching）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`CachedCatalogService`
+- 驗證測試：`CachedCatalogServiceTest`
+- 校正重點：快取章節已對齊 `@Cacheable` 的可執行範例，透過重複查詢只命中一次實際方法。
+
+
 ## 什麼是快取？
 
 快取（Cache）是將**常用且不常變動的資料**暫存在記憶體中，避免重複查詢資料庫或進行昂貴的運算，從而提升系統效能。

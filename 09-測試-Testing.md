@@ -1,5 +1,13 @@
 # 測試（Testing）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`、`examples/commerce-microservices`、`examples/commerce-modulith`
+- 主要程式：`src/test/java` 下各測試類別
+- 驗證測試：`mvn test` 全部通過
+- 校正重點：本倉庫現在以單元測試、JPA 測試、MockMvc 測試與模組驗證測試覆蓋所有示範程式。
+
+
 ## 概述
 
 Spring Boot 提供完整的測試支援，`spring-boot-starter-test` 包含：

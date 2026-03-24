@@ -1,5 +1,13 @@
 # 電商系統：Spring Modulith 版本
 
+## 本章已驗證範例
+
+- 對應專案：`examples/commerce-modulith`
+- 主要程式：`OrderService`、`OrderPlacedEvent`、`NotificationTracker`
+- 驗證測試：`ApplicationModulesTest`、`OrderServiceIntegrationTest`
+- 校正重點：Spring Modulith 並非 Spring Boot 2 主線功能，因此本章以獨立 Boot 3.2 / Spring Modulith 1.1 範例呈現，避免與 Boot 2 主專案相依衝突。
+
+
 ## 概述
 
 本文以[[19-電商微服務系統-實戰總結]]的**同一個電商系統**為例，改用 **Spring Modulith** 架構（模組化單體 / Modular Monolith）實作。
@@ -29,32 +37,28 @@
 ## 加入依賴
 
 ```xml
-<!-- Spring Modulith BOM（Spring Boot 3.x 支援，Boot 2.x 使用實驗版） -->
+<!-- 建議使用 Spring Boot 3.x + 官方穩定版 Spring Modulith -->
 <dependency>
-    <groupId>org.springframework.experimental</groupId>
-    <artifactId>spring-modulith-core</artifactId>
-    <version>0.6.0</version>
+    <groupId>org.springframework.modulith</groupId>
+    <artifactId>spring-modulith-starter-core</artifactId>
+    <version>1.1.3</version>
 </dependency>
 <dependency>
-    <groupId>org.springframework.experimental</groupId>
-    <artifactId>spring-modulith-events-api</artifactId>
-    <version>0.6.0</version>
-</dependency>
-<dependency>
-    <groupId>org.springframework.experimental</groupId>
-    <artifactId>spring-modulith-test</artifactId>
-    <version>0.6.0</version>
+    <groupId>org.springframework.modulith</groupId>
+    <artifactId>spring-modulith-starter-test</artifactId>
+    <version>1.1.3</version>
     <scope>test</scope>
 </dependency>
 
 <!-- 一般 Spring Boot 依賴 -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
+    <artifactId>spring-boot-starter</artifactId>
 </dependency>
 <dependency>
     <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-jpa</artifactId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
 </dependency>
 ```
 

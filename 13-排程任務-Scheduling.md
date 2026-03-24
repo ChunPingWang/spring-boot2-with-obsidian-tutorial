@@ -1,5 +1,13 @@
 # 排程任務（Scheduling）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`ReportScheduler`
+- 驗證測試：`ReportSchedulerTest`
+- 校正重點：排程章節已對齊 `@Scheduled` 範例，測試會驗證排程註解與核心邏輯。
+
+
 ## 概述
 
 Spring Boot 提供簡單且強大的排程機制，只需一個注解就能讓方法定期自動執行。常見應用：

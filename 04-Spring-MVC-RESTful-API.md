@@ -1,5 +1,13 @@
 # Spring MVC 與 RESTful API
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`ProductController`、`ProductService`
+- 驗證測試：`ProductApiTest`
+- 校正重點：REST API 章節現在對應可執行的商品 API，包含建立、查詢、狀態碼與 JSON 回應驗證。
+
+
 ## REST 是什麼？
 
 **REST（Representational State Transfer）** 是一種 API 設計風格，遵循以下原則：

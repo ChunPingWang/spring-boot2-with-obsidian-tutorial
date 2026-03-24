@@ -1,5 +1,13 @@
 # 異常處理（Exception Handling）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`ProductNotFoundException`、`GlobalExceptionHandler`
+- 驗證測試：`ProductApiTest`
+- 校正重點：異常處理章節已對齊 `@RestControllerAdvice` 的實作，驗證 404 與 400 的結構化錯誤回應。
+
+
 ## 概述
 
 良好的異常處理能讓 API 回傳清晰的錯誤訊息，而不是讓前端看到難懂的 500 Stack Trace。Spring Boot 提供 `@ExceptionHandler` 和 `@ControllerAdvice` 實現集中式異常處理。

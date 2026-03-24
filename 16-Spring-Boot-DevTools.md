@@ -1,5 +1,13 @@
 # Spring Boot DevTools
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`boot2-tutorial-app/pom.xml`、`application.properties`
+- 驗證測試：`mvn test`（功能不依賴 DevTools 啟用）
+- 校正重點：DevTools 只應在開發期使用，本倉庫以 optional 依賴示範，不把它當成正式環境必要元件。
+
+
 ## 什麼是 DevTools？
 
 Spring Boot DevTools 是一套**開發期間**的工具集，能夠提升開發體驗：

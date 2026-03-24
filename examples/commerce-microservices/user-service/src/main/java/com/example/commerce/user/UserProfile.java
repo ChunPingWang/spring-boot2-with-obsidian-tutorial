@@ -1,0 +1,20 @@
+package com.example.commerce.user;
+
+public class UserProfile {
+
+    private final Long id;
+    private final String username;
+
+    public UserProfile(Long id, String username) {
+        this.id = id;
+        this.username = username;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+}

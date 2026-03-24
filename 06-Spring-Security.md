@@ -1,5 +1,13 @@
 # Spring Security
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`SecurityConfig`、`AuthController`、`JwtTokenService`
+- 驗證測試：`AuthControllerTest`、`JwtTokenServiceTest`、`ProductApiTest`
+- 校正重點：安全章節已對齊 Boot 2 可執行的 JWT 範例，公開登入端點、保護商品 API，並驗證授權成功與失敗情境。
+
+
 ## 什麼是 Spring Security？
 
 Spring Security 是 Spring 生態系中負責**認證（Authentication）**與**授權（Authorization）**的框架。

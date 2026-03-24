@@ -1,5 +1,13 @@
 # Spring Boot 2 簡介與快速入門
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`TutorialApplication`、`GreetingController`
+- 驗證測試：`GreetingControllerTest`
+- 校正重點：快速入門段落現在對齊實際可執行的 Boot 2 範例專案，入口程式與 `/api/greetings/{name}` 端點都已測試。
+
+
 ## 什麼是 Spring Boot？
 
 Spring Boot 是由 Pivotal 團隊開發的框架，建立在 Spring Framework 之上，目標是讓開發者能夠**快速建立可獨立執行的 Spring 應用程式**，不需要複雜的 XML 設定。

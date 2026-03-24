@@ -1,13 +1,21 @@
 # 應用程式配置（Properties & YAML）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`application.properties`、`TutorialProperties`
+- 驗證測試：`TutorialPropertiesTest`
+- 校正重點：本章已對齊外部化設定的實際綁定範例，示範 `properties` 讀入 POJO；若要示範 YAML，可沿用相同屬性結構。
+
+
 ## 設定檔概述
 
 Spring Boot 的應用程式設定儲存在 `src/main/resources/` 目錄，支援兩種格式：
 
-| 格式 | 檔案名稱 | 特點 |
-|------|---------|------|
+| 格式         | 檔案名稱                     | 特點                   |
+| ---------- | ------------------------ | -------------------- |
 | Properties | `application.properties` | 簡單的 key=value，適合簡單設定 |
-| YAML | `application.yml` | 階層式結構，可讀性高，適合複雜設定 |
+| YAML       | `application.yml`        | 階層式結構，可讀性高，適合複雜設定    |
 
 兩種格式功能相同，可依個人喜好選擇。本文會同時展示兩種寫法。
 

@@ -1,5 +1,13 @@
 # Spring Data JPA
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`Product`、`ProductRepository`、`ProductService`
+- 驗證測試：`ProductRepositoryTest`、`ProductApiTest`
+- 校正重點：JPA 範例已改為 H2 記憶體資料庫可直接執行，並以 repository 與 API 測試驗證 CRUD 流程。
+
+
 ## 什麼是 JPA 和 Spring Data JPA？
 
 **JPA（Java Persistence API）** 是 Java 的 ORM（物件關聯對映）標準規範，讓你用 Java 物件操作資料庫，不需要手寫大量 SQL。

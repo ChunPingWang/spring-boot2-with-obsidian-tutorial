@@ -1,5 +1,13 @@
 # 自動配置（Auto Configuration）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/demo-greeting-spring-boot-autoconfigure`
+- 主要程式：`GreetingAutoConfiguration`、`GreetingProperties`
+- 驗證測試：`GreetingAutoConfigurationTest`
+- 校正重點：本章已對齊 Spring Boot 2 的 `spring.factories` 自動配置機制，並用 `ApplicationContextRunner` 驗證屬性綁定與 Bean 建立。
+
+
 ## 什麼是自動配置？
 
 Spring Boot 的**自動配置**是它最強大的特性之一。當你在 `pom.xml` 加入依賴時，Spring Boot 會自動偵測 classpath 上的類別，並幫你建立對應的 Bean，省去手動編寫大量配置程式碼。

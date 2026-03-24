@@ -1,5 +1,13 @@
 # AOP 切面導向程式設計（Aspect-Oriented Programming）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`ExecutionTimeAspect`、`MonitoredBusinessService`、`MonitoringRecorder`
+- 驗證測試：`ExecutionTimeAspectTest`
+- 校正重點：AOP 章節已對齊 `@Aspect` + `@Around` 的可執行範例，測試會驗證切面確實攔截並記錄方法。
+
+
 ## 什麼是 AOP？
 
 AOP 是一種程式設計範式，用於將**橫切關注點（Cross-cutting Concerns）**從業務邏輯中分離。

@@ -1,5 +1,13 @@
 # 驗證（Validation）
 
+## 本章已驗證範例
+
+- 對應專案：`examples/boot2-tutorial-app`
+- 主要程式：`CreateProductRequest`
+- 驗證測試：`ProductApiTest`
+- 校正重點：驗證章節以 `@NotBlank` 與 `@DecimalMin` 驗證 DTO，並以 API 測試驗證欄位錯誤輸出。
+
+
 ## 概述
 
 Spring Boot 使用 **Bean Validation（JSR 380）** 規範，搭配 **Hibernate Validator** 實作，提供宣告式的資料驗證機制。只需在欄位上加注解，就能自動驗證進來的資料。

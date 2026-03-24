@@ -1,5 +1,13 @@
 # Spring Boot Starter
 
+## 本章已驗證範例
+
+- 對應專案：`examples/demo-greeting-spring-boot-starter` + `examples/boot2-tutorial-app`
+- 主要程式：`demo-greeting-spring-boot-starter/pom.xml`、`GreetingController`
+- 驗證測試：`GreetingAutoConfigurationTest`、`GreetingControllerTest`
+- 校正重點：Starter 章節已拆成 `autoconfigure` 與 `starter` 兩個模組，並由主應用程式實際引用與驗證。
+
+
 ## 什麼是 Starter？
 
 Spring Boot Starter 是一組**預先整合好的依賴集合**（Dependency Descriptor）。
