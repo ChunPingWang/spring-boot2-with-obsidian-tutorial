@@ -25,9 +25,7 @@ class AuthControllerTest {
     void createsJwtForValidCredentials() throws Exception {
         mockMvc.perform(post("/api/auth/token")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("""
-                                {"username":"demo","password":"password"}
-                                """))
+                        .content("{\"username\":\"demo\",\"password\":\"password\"}"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.token", not(blankOrNullString())));
     }

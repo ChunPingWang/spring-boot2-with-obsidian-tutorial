@@ -16,7 +16,7 @@
     <name>boot2-tutorial-app</name>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>1.8</java.version>
         <jjwt.version>0.11.5</jjwt.version>
     </properties>
 

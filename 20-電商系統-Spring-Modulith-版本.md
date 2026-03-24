@@ -1,11 +1,13 @@
 # 電商系統：Spring Modulith 版本
 
+> **版本標記**：本文會提到 **Spring Boot 3 / Spring Modulith** 的正式版脈絡；但本倉庫的可執行範例已統一為 **Spring Boot 2.7 + JDK 8 + legacy Moduliths 1.3**。
+
 ## 本章已驗證範例
 
 - 對應專案：`examples/commerce-modulith`
 - 主要程式：`OrderService`、`OrderPlacedEvent`、`NotificationTracker`
 - 驗證測試：`ApplicationModulesTest`、`OrderServiceIntegrationTest`
-- 校正重點：Spring Modulith 並非 Spring Boot 2 主線功能，因此本章以獨立 Boot 3.2 / Spring Modulith 1.1 範例呈現，避免與 Boot 2 主專案相依衝突。
+- 校正重點：正式版 Spring Modulith 需要 Spring Boot 3 / Java 17；為了與本倉庫一致，本章範例改以 Spring Boot 2.7 / JDK 8 可用的 legacy Moduliths 1.3 呈現。
 
 
 ## 概述
@@ -37,16 +39,16 @@
 ## 加入依賴
 
 ```xml
-<!-- 建議使用 Spring Boot 3.x + 官方穩定版 Spring Modulith -->
+<!-- 若專案需維持 Spring Boot 2.7 / JDK 8，請使用 legacy Moduliths -->
 <dependency>
-    <groupId>org.springframework.modulith</groupId>
-    <artifactId>spring-modulith-starter-core</artifactId>
-    <version>1.1.3</version>
+    <groupId>org.moduliths</groupId>
+    <artifactId>moduliths-core</artifactId>
+    <version>1.3.0</version>
 </dependency>
 <dependency>
-    <groupId>org.springframework.modulith</groupId>
-    <artifactId>spring-modulith-starter-test</artifactId>
-    <version>1.1.3</version>
+    <groupId>org.moduliths</groupId>
+    <artifactId>moduliths-test</artifactId>
+    <version>1.3.0</version>
     <scope>test</scope>
 </dependency>
 
@@ -338,7 +340,7 @@ class ProductService {
 
 ## 模組測試
 
-Spring Modulith 允許**單獨測試某個模組**，不需要啟動其他模組：
+在正式版 Spring Modulith 中，可以用 `@ApplicationModuleTest` **單獨測試某個模組**；若專案維持 Spring Boot 2.7 / JDK 8，則通常改以 `@SpringBootTest`、Mock 與封裝良好的模組 API 來達成相同目標：
 
 ```java
 package com.example.ecommerce.order;
@@ -377,30 +379,21 @@ class OrderModuleTest {
 
 ## 架構驗證測試
 
-Spring Modulith 可以**自動驗證模組規則**（防止意外跨模組存取）：
+無論是正式版 Spring Modulith 或 legacy Moduliths，都可以**自動驗證模組規則**（防止意外跨模組存取）：
 
 ```java
 package com.example.ecommerce;
 
-import org.springframework.modulith.core.ApplicationModules;
-import org.springframework.modulith.docs.Documenter;
+import org.moduliths.model.Modules;
 
 class ModularityTests {
 
-    ApplicationModules modules = ApplicationModules.of(EcommerceApplication.class);
+    Modules modules = Modules.of(EcommerceApplication.class);
 
     @Test
     void verifiesModularStructure() {
         // 驗證模組邊界沒有被違反（如 notification 直接存取 order 的 Entity）
         modules.verify();
-    }
-
-    @Test
-    void createModulithsDocs() {
-        // 自動生成模組依賴圖（PlantUML 或 C4 Model 格式）
-        new Documenter(modules)
-            .writeModulesAsPlantUml()
-            .writeIndividualModulesAsPlantUml();
     }
 }
 ```
@@ -410,6 +403,8 @@ class ModularityTests {
 ## 持久化事件（Event Persistence）
 
 防止事件在處理過程中遺失（類似微服務的 Outbox Pattern）：
+
+> **版本提醒**：下列 `spring-modulith-events-jpa` 屬於正式 Spring Modulith / Spring Boot 3 生態的做法。若專案固定在 Spring Boot 2.7 / JDK 8，可保留一般 Spring Event，或自行實作 outbox / 重試機制。
 
 ```xml
 <dependency>

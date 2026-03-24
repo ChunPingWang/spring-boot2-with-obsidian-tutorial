@@ -114,7 +114,7 @@ public class SecurityConfig {
 
 ## REST API 安全：JWT 認證
 
-現代 REST API 通常使用 **JWT（JSON Web Token）** 做無狀態認證。
+現代 REST API 通常使用 **JWT（JSON Web Token）** 做無狀態認證。若專案需維持 **JDK 8**，範例中應避免使用 `Map.of(...)` 這類 Java 9+ API，改用 `Collections.singletonMap(...)` 或手動建立 `Map`。
 
 ### 加入 JWT 依賴
 
@@ -357,25 +357,25 @@ public class AuthController {
             );
         } catch (BadCredentialsException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                .body(Map.of("error", "帳號或密碼錯誤"));
+                .body(Collections.singletonMap("error", "帳號或密碼錯誤"));
         }
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(
             request.getUsername());
         String token = jwtUtils.generateToken(userDetails);
 
-        return ResponseEntity.ok(Map.of(
-            "token", token,
-            "username", userDetails.getUsername(),
-            "roles", userDetails.getAuthorities()
-        ));
+        Map<String, Object> response = new LinkedHashMap<>();
+        response.put("token", token);
+        response.put("username", userDetails.getUsername());
+        response.put("roles", userDetails.getAuthorities());
+        return ResponseEntity.ok(response);
     }
 
     // POST /api/auth/register
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
         if (userRepository.existsByUsername(request.getUsername())) {
-            return ResponseEntity.badRequest().body(Map.of("error", "使用者名稱已存在"));
+            return ResponseEntity.badRequest().body(Collections.singletonMap("error", "使用者名稱已存在"));
         }
 
         User newUser = new User();
@@ -385,7 +385,7 @@ public class AuthController {
         userRepository.save(newUser);
 
         return ResponseEntity.status(HttpStatus.CREATED)
-            .body(Map.of("message", "註冊成功"));
+            .body(Collections.singletonMap("message", "註冊成功"));
     }
 }
 ```

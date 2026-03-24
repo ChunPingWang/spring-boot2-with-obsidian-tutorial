@@ -37,9 +37,7 @@ class ProductApiTest {
         String response = mockMvc.perform(post("/api/products")
                         .header("Authorization", "Bearer " + token)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("""
-                                {"name":"Laptop","price":32999.00}
-                                """))
+                        .content("{\"name\":\"Laptop\",\"price\":32999.00}"))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.name").value("Laptop"))
                 .andReturn()
@@ -61,9 +59,7 @@ class ProductApiTest {
         mockMvc.perform(post("/api/products")
                         .header("Authorization", "Bearer " + token)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("""
-                                {"name":"","price":0}
-                                """))
+                        .content("{\"name\":\"\",\"price\":0}"))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.code").value("VALIDATION_FAILED"))
                 .andExpect(jsonPath("$.details.name").exists())

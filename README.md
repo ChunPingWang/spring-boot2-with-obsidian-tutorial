@@ -8,7 +8,7 @@
 - `examples/demo-greeting-spring-boot-starter`：自製 Starter 封裝範例
 - `examples/boot2-tutorial-app`：00–17 章的主要可執行教學應用程式
 - `examples/commerce-microservices`：第 19 章的電商微服務最小範例
-- `examples/commerce-modulith`：第 20 章的 Spring Modulith 範例（Boot 3）
+- `examples/commerce-modulith`：第 20 章的 Moduliths / 模組化單體範例（Boot 2.7 / JDK 8）
 
 ## 測試方式
 
@@ -51,5 +51,5 @@ mvn -pl examples/boot2-tutorial-app -am package
 
 ## 補充說明
 
-- 本倉庫主線仍以 Spring Boot 2 教學為主，因此第 20 章獨立使用 Boot 3 + Spring Modulith 建立示範。
+- 本倉庫所有可執行範例已統一對齊 Spring Boot 2.7 與 JDK 8；第 20 章改以 legacy Moduliths 示範 Boot 2 可用的模組化單體作法。
 - 若要延伸文件中的 YAML、Docker、部署或 Observability 片段，可直接以 `examples/` 下的專案為基礎擴充。

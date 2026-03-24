@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<ApiError> handleProductNotFound(ProductNotFoundException exception) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(new ApiError("PRODUCT_NOT_FOUND", exception.getMessage(), Map.of()));
+                .body(new ApiError("PRODUCT_NOT_FOUND", exception.getMessage(), java.util.Collections.<String, String>emptyMap()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

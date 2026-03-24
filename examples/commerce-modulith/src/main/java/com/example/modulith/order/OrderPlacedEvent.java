@@ -14,15 +14,15 @@ public class OrderPlacedEvent {
         this.totalAmount = totalAmount;
     }
 
-    public Long customerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public Long productId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public BigDecimal totalAmount() {
+    public BigDecimal getTotalAmount() {
         return totalAmount;
     }
 }

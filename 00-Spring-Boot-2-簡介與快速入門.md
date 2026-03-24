@@ -45,7 +45,7 @@ Spring Boot 是由 Pivotal 團隊開發的框架，建立在 Spring Framework �
    - **Group**：`com.example`
    - **Artifact**：`demo`
    - **Packaging**：Jar
-   - **Java**：11
+   - **Java**：8
 3. 加入依賴（Dependencies）：搜尋並加入 **Spring Web**
 4. 點選 **GENERATE** 下載壓縮檔
 5. 解壓縮並用 IDE（IntelliJ IDEA 或 Eclipse）開啟
@@ -75,7 +75,7 @@ Spring Boot 是由 Pivotal 團隊開發的框架，建立在 Spring Framework �
     <description>Spring Boot 2 入門範例</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>

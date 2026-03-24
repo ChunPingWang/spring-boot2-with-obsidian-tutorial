@@ -30,6 +30,6 @@ class OrderServiceIntegrationTest {
         BigDecimal total = orderService.placeOrder(1L, 101L, 2);
         assertThat(total).isEqualByComparingTo("4998.00");
         assertThat(notificationTracker.handledEvents()).hasSize(1);
-        assertThat(notificationTracker.handledEvents().get(0).customerId()).isEqualTo(1L);
+        assertThat(notificationTracker.handledEvents().get(0).getCustomerId()).isEqualTo(1L);
     }
 }
